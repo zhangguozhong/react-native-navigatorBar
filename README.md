@@ -3,7 +3,7 @@
 
 ## Installation
 
-npm install --save react-native-navigation-bar or yarn add react-native-navigation-bar
+npm install --save react-native-navigation-zbar or yarn add react-native-navigation-zbar
 
 react-native link react-native-device-info
 
@@ -41,7 +41,7 @@ TestPage.js
 import React,{ Component } from 'react';
 import { View } from 'react-native';
 import { observer } from 'mobx-react';
-import { NavigatorBarContainer } from 'react-native-navigation-bar';
+import { NavigatorBarContainer } from 'react-native-navigation-zbar';
 
 @NavigatorBarContainer
 @observer
