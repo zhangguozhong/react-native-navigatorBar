@@ -1,0 +1,31 @@
+{
+  "name": "react-native-navigation-bar",
+  "version": "1.0.0",
+  "description": "封装好的自定义react-navigation的导航条，兼容iOS与android系统StatusBar。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "react-navigation-props-helper": "^1.2.0",
+    "react-native-device-info": "^0.24.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangguozhong/react-native-navigatorBar.git"
+  },
+  "keywords": [
+    "react-native",
+    "navigator",
+    "bar",
+    "mobx",
+    "android",
+    "ios"
+  ],
+  "author": "zhangguozhong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhangguozhong/react-native-navigatorBar/issues"
+  },
+  "homepage": "https://github.com/zhangguozhong/react-native-navigatorBar#readme"
+}
