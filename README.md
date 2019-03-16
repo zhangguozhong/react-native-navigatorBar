@@ -71,3 +71,20 @@ export default class TestPage extends Component {
 }
 
 ```
+
+
+## 注意事项
+
+1、封装的高阶组件NavigatorBarContainer基于mobx，项目需依赖mobx组件；
+
+2、此组件用于自定义react-navigation的导航条，因此需隐藏react-navigation自带的导航条，如
+
+```javascript
+const defaultOptions = {
+    //默认样式
+    gesturesEnabled:true,
+    header:null
+};
+```
+
+3、支持自定义视图backView（返回按钮）、centerView（标题）、rightViews（右上角按钮）。
