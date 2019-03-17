@@ -75,7 +75,7 @@ export default class TestPage extends Component {
 
 ## 注意事项
 
-1、封装的高阶组件NavigatorBarContainer基于mobx，项目需依赖mobx组件；
+1、封装的高阶组件NavigatorBarContainer基于mobx，项目需依赖mobx、mobx-react组件；
 
 2、此组件用于自定义react-navigation的导航条，因此需隐藏react-navigation自带的导航条，如
 
