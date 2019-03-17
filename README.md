@@ -88,3 +88,5 @@ const defaultOptions = {
 ```
 
 3、支持自定义视图backView（返回按钮）、centerView（标题）、rightViews（右上角按钮）。
+
+4、DeviceUtils，二次封装react-native-device-info，用于判断设备是否iPhoneX系列，适配导航条。
