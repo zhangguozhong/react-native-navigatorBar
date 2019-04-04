@@ -82,7 +82,6 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         height:NAVIGATOR_BAR_HEIGHT,
-        backgroundColor:'red',
         flex:1
     },
     headTitle:{
