@@ -6,17 +6,16 @@ const NAVIGATOR_BAR_HEIGHT = 44;
 
 export default function NavigatorBar(props) {
     const { navigator,statusBarHeight } = props;
-    const { hideBackButton,centerView,title,rightViews,backView,style } = navigator;
+    const { hideBackButton,centerView,title,rightViews,backView,style,tintColor } = navigator;
     const paddingTop = Platform.OS === 'ios'? DeviceUtils.ifIsIphoneX(44,20): !statusBarHeight ? 20: statusBarHeight;
     const height = Platform.OS === 'ios'? DeviceUtils.ifIsIphoneX(88,64): paddingTop + NAVIGATOR_BAR_HEIGHT;
-
     return(
         <View style={[styles.container,{ height,paddingTop },style]}>
             <View style={styles.back}>
                 { !hideBackButton? (!backView ? renderBackButton(props) :backView) :null }
             </View>
             <View style={styles.centerView}>
-                { !centerView ? <Text style={styles.headTitle} numberOfLines={1}>{ title }</Text> : centerView }
+                { !centerView ? <Text style={[styles.headTitle,{ color:!tintColor? 'white': tintColor }]} numberOfLines={1}>{ title }</Text> : centerView }
             </View>
             <View style={styles.right}>
                 { !rightViews ? null: renderRightViews(props,rightViews) }
@@ -26,21 +25,29 @@ export default function NavigatorBar(props) {
 }
 
 function renderBackButton(props) {
-    const { goBack } = props;
+    const { goBack,navigator } = props;
+    const { interceptGoBack,backTitle,tintColor } = navigator;
     return(
-        <TouchableOpacity style={styles.button} onPress={() => { goBack && goBack(); }}>
-            <Image style={styles.icon} source={require('../images/back.png')}/>
-            <Text style={styles.title}>返回</Text>
+        <TouchableOpacity style={styles.button} onPress={() => {
+            if (interceptGoBack) {
+                interceptGoBack && interceptGoBack();
+            }else {
+                goBack && goBack();
+            }
+        }}>
+            <Image style={[styles.icon,{ tintColor:!tintColor? 'white':tintColor }]} source={require('../images/back.png')}/>
+            { !backTitle ? null: <Text style={[styles.title,{ color:!tintColor? 'white': tintColor }]}>{ backTitle }</Text> }
         </TouchableOpacity>
     )
 }
 function renderRightViews(props,rightViews) {
-    const { rightDisable } = props;
+    const { rightDisable,navigator } = props;
+    const { tintColor } = navigator;
     return rightViews.map((item,index) => {
         const { onClick,text,id } = item;
         return(
             <TouchableOpacity disabled={rightDisable} style={styles.iconBtn} key={item+index} onPress={() => { onClick && onClick(id); }}>
-                { typeof text === 'string' ? <Text style={styles.title}>{ text }</Text> : <Image style={styles.icon} source={text}/> }
+                { typeof text === 'string' ? <Text style={[styles.title,{ color:!tintColor? 'white': tintColor }]}>{ text }</Text> : <Image style={[styles.icon,{ tintColor:!tintColor? 'white':tintColor }]} source={text}/> }
             </TouchableOpacity>
         );
     });
@@ -68,7 +75,6 @@ const styles = StyleSheet.create({
         height:NAVIGATOR_BAR_HEIGHT
     },
     title:{
-        color:'white',
         fontSize:14
     },
     centerView:{

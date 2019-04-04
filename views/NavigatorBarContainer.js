@@ -13,15 +13,11 @@ export default (WrappedComponent) => class extends Component {
         this.navigatorStore = new NavigatorStore();
     }
 
-    goBack = () => {
-        NavigatorPush.goBack();
-    };
-
+    goBack = () => { NavigatorPush.goBack(); };
     render() {
         const { hideNavBar } = this.navigatorStore.getNavigationOptions;
         const { rightDisable } = this.navigatorStore.getNavigatorParams;
         const { statusBarHeight } = this.props;
-
         return (
             <View style={styles.mainView}>
                 { !hideNavBar? <NavigatorBar goBack={this.goBack} statusBarHeight={statusBarHeight} navigator={this.navigatorStore.getNavigationOptions} rightDisable={rightDisable}/> :null }
