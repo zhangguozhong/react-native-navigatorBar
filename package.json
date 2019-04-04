@@ -1,6 +1,6 @@
 {
   "name": "react-native-navigation-zbar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "封装好的自定义react-navigation的导航条，兼容iOS与android系统StatusBar。",
   "main": "index.js",
   "scripts": {

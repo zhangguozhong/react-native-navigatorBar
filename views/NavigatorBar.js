@@ -75,37 +75,37 @@ const styles = StyleSheet.create({
         height:NAVIGATOR_BAR_HEIGHT
     },
     title:{
-        fontSize:14
+        fontSize:15
     },
     centerView:{
         justifyContent:'center',
         alignItems:'center',
         height:NAVIGATOR_BAR_HEIGHT,
+        backgroundColor:'red',
         flex:1
     },
     headTitle:{
         marginHorizontal:8,
-        fontSize:16,
-        color:'white'
+        fontSize:Platform.OS === 'ios' ? 17 : 20,
+        textAlign:'center'
     },
     right:{
         width:TITLE_OFFSET_CENTER_ALIGN,
         height:NAVIGATOR_BAR_HEIGHT,
         flexDirection:'row',
         justifyContent:'flex-end',
-        alignItems:'center',
-        marginRight:8
+        alignItems:'center'
     },
     icon:{
         height:24,
         width:24,
-        marginLeft:8
+        padding:3
     },
     iconBtn:{
         justifyContent:'center',
         alignItems:'center',
         height:30,
         width:30,
-        marginLeft:4
+        marginRight:8
     }
 });
