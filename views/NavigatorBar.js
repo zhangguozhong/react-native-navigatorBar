@@ -66,7 +66,8 @@ const styles = StyleSheet.create({
         width:TITLE_OFFSET_CENTER_ALIGN,
         height:NAVIGATOR_BAR_HEIGHT,
         justifyContent:'center',
-        alignItems:'center'
+        alignItems:'center',
+        marginLeft:8
     },
     button:{
         flexDirection:'row',
@@ -86,7 +87,7 @@ const styles = StyleSheet.create({
     },
     headTitle:{
         marginHorizontal:8,
-        fontSize:Platform.OS === 'ios' ? 17 : 20,
+        fontSize:Platform.OS === 'ios' ? 18 : 20,
         textAlign:'center'
     },
     right:{
@@ -94,18 +95,18 @@ const styles = StyleSheet.create({
         height:NAVIGATOR_BAR_HEIGHT,
         flexDirection:'row',
         justifyContent:'flex-end',
-        alignItems:'center'
+        alignItems:'center',
+        marginRight:8
     },
     icon:{
         height:24,
         width:24,
-        padding:3
+        padding:4
     },
     iconBtn:{
         justifyContent:'center',
         alignItems:'center',
-        height:30,
-        width:30,
-        marginRight:8
+        height:32,
+        width:32
     }
 });
